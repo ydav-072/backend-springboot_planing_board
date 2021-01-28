@@ -12,7 +12,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Setter
 @EqualsAndHashCode
-@Table(name = "category", schema = "task_list", catalog = "")
+@Table(name = "category", schema = "task_list")
 public class CategoryEntity {
     private Long id;
     private String title;

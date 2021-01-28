@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Setter
 @EqualsAndHashCode
-@Table(name = "task", schema = "task_list", catalog = "")
+@Table(name = "task", schema = "task_list")
 public class TaskEntity {
     private Long id;
     private String title;
