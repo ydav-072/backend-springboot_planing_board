@@ -15,12 +15,13 @@ import java.util.Date;
 public class TaskEntity {
     private Long id;
     private String title;
-    private Integer completed;
+    private Integer completed; //1=true, 0=false
     private Date date;
     private PriorityEntity priority;
     private CategoryEntity category;
 
     @Id
+    // указываем, что поле заполняется в бд, объект возвращается с новым id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public Long getId() {
