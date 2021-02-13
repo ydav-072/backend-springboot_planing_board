@@ -1,8 +1,6 @@
 package ru.studyfullstack.tasklist.backendspringboot.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.studyfullstack.tasklist.backendspringboot.entity.CategoryEntity;
 import ru.studyfullstack.tasklist.backendspringboot.repo.CategoryRepository;
 
@@ -22,5 +20,10 @@ public class CategoryController {
         List <CategoryEntity> list = categoryRepository.findAll();
         System.out.println(list);
         return list;
+    }
+
+    @PostMapping("/add")
+    public CategoryEntity add(@RequestBody CategoryEntity categoryEntity){
+        return categoryRepository.save(categoryEntity); // add data to database and send obj in json format in response
     }
 }

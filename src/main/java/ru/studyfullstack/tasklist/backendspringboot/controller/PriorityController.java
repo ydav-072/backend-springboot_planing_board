@@ -1,8 +1,6 @@
 package ru.studyfullstack.tasklist.backendspringboot.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.studyfullstack.tasklist.backendspringboot.entity.PriorityEntity;
 import ru.studyfullstack.tasklist.backendspringboot.repo.PriorityRepository;
 
@@ -23,6 +21,11 @@ public class PriorityController {
         List<PriorityEntity> list = priorityRepository.findAll();
         System.out.println(list);
         return list;
+    }
+
+    @PostMapping("/add")
+    public PriorityEntity add(@RequestBody PriorityEntity priorityEntity){
+        return priorityRepository.save(priorityEntity);
     }
 
 }
